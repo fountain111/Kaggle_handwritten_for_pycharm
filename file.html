@@ -1,0 +1,3 @@
+一个batch对应一个step,validation 和train所构造的误差函数图像,X轴是batch,也就是step,Y轴是error
+,因为valadition的size是2000,考虑到比较小,采用一次性计算error,不分batch,每1000个step 计算一次error,用这个error和train的erro作对比,
+也能达到预期效果
