@@ -4,7 +4,7 @@ import numpy as np
 
 VALIDATION_SIZE = 2000
 FLAGS = tf.app.flags.FLAGS
-tf.app.flags.DEFINE_integer('regular', '1',
+tf.app.flags.DEFINE_integer('regular', '0',
                             """if use regularization to prevent overfittingm. 0 = not use""")
 LEARNING_RATE = 1e-4
 
@@ -28,10 +28,9 @@ def split_data():
 
 
 def inference(datas):
-    number_nn_1 = 500
+    number_nn_1 = 5
     w1 = weight_variable([784, number_nn_1])
     b1 = bias_variable([number_nn_1])
-
     hidden1 = tf.nn.sigmoid(tf.matmul(datas, w1) + b1)
 
     w2 = weight_variable([number_nn_1, 10])
